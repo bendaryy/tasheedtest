@@ -124,7 +124,7 @@ class InvoiceController extends Controller
         // return $datasave;
 
         $trnsformed = json_encode($invoice, JSON_UNESCAPED_UNICODE);
-        $myFileToJson = fopen("D:\laragon\www/tasheed\EInvoicing\SourceDocumentJson.json", "w") or die("unable to open file");
+        $myFileToJson = fopen("D:\laragon\www/tasheedtest\EInvoicing\SourceDocumentJson.json", "w") or die("unable to open file");
         fwrite($myFileToJson, $trnsformed);
         return redirect()->route('cer');
 
@@ -134,10 +134,10 @@ class InvoiceController extends Controller
 
         shell_exec('D:\laragon\www/tasheed\EInvoicing\SubmitInvoices2.bat');
 
-        $path = "D:\laragon\www/tasheed\EInvoicing\FullSignedDocument.json";
-        $path2 = "D:\laragon\www/tasheed\EInvoicing\Cades.txt";
-        $path3 = "D:\laragon\www/tasheed\EInvoicing\CanonicalString.txt";
-        $path4 = "D:\laragon\www/tasheed\EInvoicing\SourceDocumentJson.json";
+        $path = "D:\laragon\www/tasheedtest\EInvoicing\FullSignedDocument.json";
+        $path2 = "D:\laragon\www/tasheedtest\EInvoicing\Cades.txt";
+        $path3 = "D:\laragon\www/tasheedtest\EInvoicing\CanonicalString.txt";
+        $path4 = "D:\laragon\www/tasheedtest\EInvoicing\SourceDocumentJson.json";
 
         $fullSignedFile = file_get_contents($path);
 
