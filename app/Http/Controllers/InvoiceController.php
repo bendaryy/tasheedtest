@@ -132,7 +132,7 @@ class InvoiceController extends Controller
     public function openBat()
     {
 
-        shell_exec('D:\laragon\www/tasheed\EInvoicing\SubmitInvoices2.bat');
+        shell_exec('D:\laragon\www/tasheedtest\EInvoicing\SubmitInvoices2.bat');
 
         $path = "D:\laragon\www/tasheedtest\EInvoicing\FullSignedDocument.json";
         $path2 = "D:\laragon\www/tasheedtest\EInvoicing\Cades.txt";

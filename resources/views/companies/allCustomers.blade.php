@@ -133,7 +133,7 @@
                         <form action="{{ route('deleteCustomer',$customer->id ) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('هل انت متأكد من مسح العميل؟');">مسح</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('هل انت متأكد من مسح العميل؟');">حذف</button>
                         </form>
                     </td>
                 </tr>
