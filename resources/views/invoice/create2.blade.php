@@ -80,6 +80,9 @@
         width: 130;
         text-align: center
     }
+    input[name="totalItemsDiscount[]"],input[name="totalAmount2"],input[name="totalAmount"]{
+        width: 250;
+    }
 
     hr {
         border: 4px solid white;
@@ -498,7 +501,7 @@
             )
 
 
-            $('<script> function operation' + i + '(value) {var x, y, z;  var quantity = document.getElementById("quantity' + i + '").value; x = value * quantity; document.getElementById("salesTotal' + i + '").value = x;};  function proccess' + i + '(value) {var x, y, z;  var amounEGP = document.getElementById("amountEGP' + i + '").value; y = value * amounEGP; document.getElementById("salesTotal' + i + '").value = y;};function discount' + i + '(value) {var salesTotal, netTotal, z, t2valueEnd, t1Value, rate, t4rate, t4Amount; salesTotal = document.getElementById("salesTotal' + i + '").value; netTotal = salesTotal - value; netTotalEnd = document.getElementById("netTotal' + i + '").value = netTotal; rate = document.getElementById("rate' + i + '").value; t4rate = document.getElementById("t4rate' + i + '").value;  t2valueEnd = document.getElementById("t2' + i + '").value = (netTotalEnd * rate) / 100; t4Amount = document.getElementById("t4Amount' + i + '").value = (netTotal * t4rate) / 100;}; function itemsDiscountValue' + i + '(value) {var x, netTotal, t1amount, t2amount, t4Amount;netTotal = document.getElementById("netTotal' + i + '").value;t2amount = document.getElementById("t2' + i + '").value;t4Amount = document.getElementById("t4Amount' + i + '").value;x = parseFloat(netTotal) + parseFloat(t2amount) - parseFloat(t4Amount) - parseFloat(value);document.getElementById("totalItemsDiscount' + i + '").value = x;};  </' + 'script>').appendTo('#test123');
+            $('<script> function operation' + i + '(value) {var x, y, z;  var quantity = document.getElementById("quantity' + i + '").value; x = value * quantity; document.getElementById("salesTotal' + i + '").value = x.toFixed(2);};  function proccess' + i + '(value) {var x, y, z;  var amounEGP = document.getElementById("amountEGP' + i + '").value; y = value * amounEGP; document.getElementById("salesTotal' + i + '").value = y.toFixed(2);};function discount' + i + '(value) {var salesTotal, netTotal, z, t2valueEnd, t1Value, rate, t4rate, t4Amount; salesTotal = document.getElementById("salesTotal' + i + '").value; netTotal = salesTotal - value; netTotalEnd = document.getElementById("netTotal' + i + '").value = netTotal.toFixed(2); rate = document.getElementById("rate' + i + '").value; t4rate = document.getElementById("t4rate' + i + '").value;  t2valueEnd = document.getElementById("t2' + i + '").value = ((netTotalEnd * rate) / 100).toFixed(2); t4Amount = document.getElementById("t4Amount' + i + '").value = ((netTotal * t4rate) / 100).toFixed(2);}; function itemsDiscountValue' + i + '(value) {var x, netTotal, t1amount, t2amount, t4Amount;netTotal = document.getElementById("netTotal' + i + '").value;t2amount = document.getElementById("t2' + i + '").value;t4Amount = document.getElementById("t4Amount' + i + '").value;x = parseFloat(netTotal) + parseFloat(t2amount) - parseFloat(t4Amount) - parseFloat(value);document.getElementById("totalItemsDiscount' + i + '").value = x.toFixed(2);};  </' + 'script>').appendTo('#test123');
             $(document).on('click', '.btn_remove', function() {
                 var button_id = $(this).attr("id");
                 $("#row" + button_id + "").remove()
@@ -562,14 +565,14 @@
             parseFloat(t2amount) -
             parseFloat(t4Amount) -
             parseFloat(value);
-        document.getElementById("totalItemsDiscount").value = x;
+        document.getElementById("totalItemsDiscount").value = x.toFixed(2);
     }
 
     function Extradiscount(value) {
         var totalDiscount, x;
         totalDiscount = document.getElementById("totalAmount").value;
         x = totalDiscount - value;
-        document.getElementById("totalAmount2").value = x;
+        document.getElementById("totalAmount2").value = x.toFixed(2);
     }
 
     function findTotalDiscountAmount() {
